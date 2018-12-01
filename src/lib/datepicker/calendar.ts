@@ -102,7 +102,10 @@ export class MatCalendarHeader<D> {
 
   /** Handles user clicks on the period label. */
   currentPeriodClicked(): void {
-    this.calendar.currentView = this.calendar.currentView == 'month' ? 'multi-year' : 'month';
+    if(this.calendar.currentView == 'multi-year') this.calendar.currentView = 'year';
+    else if(this.calendar.currentView == 'year') this.calendar.currentView = 'month';
+    else if(this.calendar.currentView == 'month') this.calendar.currentView = 'multi-year';
+    // this.calendar.currentView = this.calendar.currentView == 'month' ? 'multi-year' : 'year';
   }
 
   /** Handles user clicks on the previous button. */

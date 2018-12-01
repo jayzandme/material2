@@ -9,7 +9,7 @@ import {MatDatepickerIntl} from './datepicker-intl';
 import {MatDatepickerModule} from './datepicker-module';
 import {yearsPerPage} from './multi-year-view';
 
-describe('MatCalendarHeader', () => {
+fdescribe('MatCalendarHeader', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -64,6 +64,11 @@ describe('MatCalendarHeader', () => {
       fixture.detectChanges();
 
       expect(calendarInstance.currentView).toBe('multi-year');
+
+      periodButton.click();
+      fixture.detectChanges();
+
+      expect(calendarInstance.currentView).toBe('year');
 
       periodButton.click();
       fixture.detectChanges();
